@@ -17,6 +17,7 @@ import {PreloaderComponent} from './components/common/preloader/preloader.compon
 import {AngularFireModule} from '@angular/fire';
 import {environment} from '../environments/environment';
 import { IniciarComponent } from './components/pages/iniciar/iniciar.component';
+import { PerfilComponent } from './components/pages/perfil/perfil.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { IniciarComponent } from './components/pages/iniciar/iniciar.component';
         RegistrarComponent,
         PreloaderComponent,
         IniciarComponent,
+        PerfilComponent,
     ],
     imports: [
         ReactiveFormsModule,
