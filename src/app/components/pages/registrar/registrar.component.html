@@ -12,7 +12,7 @@
                     <div class="top">
                         <h2>Registro de usuarios</h2>
 
-                        <form >
+                        <form (ngSubmit)="registrar()" [formGroup]="registrarUsuario">
 
                             <div class="form-group">
                                 <input type="email" class="form-control" placeholder="Email" formControlName="email">
@@ -22,7 +22,7 @@
                                 <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
                             </div>
 
-                            <button class="btn" >
+                            <button class="btn" type="submit" >
                                 <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" ></span>
                                 Crear cuenta
                             </button>

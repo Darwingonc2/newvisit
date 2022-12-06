@@ -4,9 +4,16 @@
 
 export const environment = {
     production: false,
-    urlApi: 'http://localhost/crmtrabajo-backend/public/api/v1/',
-    urlResetPassword: 'http://localhost/crmtrabajo-backend/public/',
-
+    /*urlApi: 'http://localhost/crmtrabajo-backend/public/api/v1/',
+    urlResetPassword: 'http://localhost/crmtrabajo-backend/public/',*/
+    firebaseConfig: {
+        apiKey: 'AIzaSyAdwj7I8S6FFiCyQY0035Ir-5pWlMK-0bY',
+        authDomain: 'newvisit-database.firebaseapp.com',
+        projectId: 'newvisit-database',
+        storageBucket: 'newvisit-database.appspot.com',
+        messagingSenderId: '398659694948',
+        appId: '1:398659694948:web:c762c66012a500a078ca71'
+    },
 };
 
 /*
