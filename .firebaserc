@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "newvist-data": {
+      "hosting": {
+        "alzo-ng": [
+          "newvist-data"
+        ]
+      }
+    },
+    "newvisit-database": {
+      "hosting": {
+        "alzo-ng": [
+          "newvisit-database"
+        ]
+      }
+    }
+  }
+}

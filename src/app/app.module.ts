@@ -14,11 +14,16 @@ import {ArchwizardModule} from 'angular-archwizard';
 import { RegistrarComponent } from './components/pages/registrar/registrar.component';
 import {PreloaderComponent} from './components/common/preloader/preloader.component';
 
+import {AngularFireModule} from '@angular/fire';
+import {environment} from '../environments/environment';
+import { IniciarComponent } from './components/pages/iniciar/iniciar.component';
+
 @NgModule({
     declarations: [
         AppComponent,
         RegistrarComponent,
         PreloaderComponent,
+        IniciarComponent,
     ],
     imports: [
         ReactiveFormsModule,
@@ -29,6 +34,7 @@ import {PreloaderComponent} from './components/common/preloader/preloader.compon
         NgbModule,
         NgSelectModule,
         ArchwizardModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
   providers: [],
   bootstrap: [AppComponent]
