@@ -1,1 +1,48 @@
-<p>iniciar works!</p>
+<div class="user-form-area">
+<div class="container-fluid p-0">
+    <div class="row m-0 align-items-center">
+        <div class="col-lg-6 p-0 col-md-12">
+            <div class="user-img">
+                <img src="assets/img/resgister-bg.jpg" alt="User">
+            </div>
+        </div>
+
+        <div class="col-lg-6 p-0 col-md-12">
+            <div class="user-content">
+                <div class="top">
+                    <h2>Iniciar Sesion</h2>
+
+                    <form (ngSubmit)="iniciar()" [formGroup]="iniciarSesion">
+
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" formControlName="email">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Contraseña" formControlName="password">
+                        </div>
+
+                        <button class="btn" type="submit" >
+                            <span class="" role="status" aria-hidden="true" ></span>
+                            Entrar
+                        </button>
+
+                        <button class="btn" (click)="registro()" type="submit" style="margin-top: 2%">
+                            <span class="" role="status" aria-hidden="true" ></span>
+                            Crear cuenta nueva
+                        </button>
+                    </form>
+                </div>
+                <div class="end">
+                    <div class="form-group">
+                        Otros inicios de sesión
+                    </div>
+                    <ul>
+                        <li><a (click)="iniciarConGoogle()" target="_blank"><i class='bx bxl-google'></i>Google</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

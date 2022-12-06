@@ -51,4 +51,8 @@ export class RegistrarComponent implements OnInit {
       }
   }
 
+  tengoCuenta(){
+      this.router.navigate([ 'iniciar-sesion'])
+  }
+
 }
