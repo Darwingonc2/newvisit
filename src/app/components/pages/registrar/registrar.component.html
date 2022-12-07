@@ -23,17 +23,19 @@
                             </div>
 
                             <button class="btn" type="submit" >
-                                <span class="" role="status" aria-hidden="true" ></span>
+                                <span role="status" aria-hidden="true" ></span>
                                 Crear cuenta
-                            </button>
-
-                            <button class="btn" (click)="tengoCuenta()" type="submit" style="margin-top: 2%">
-                                <span class="" role="status" aria-hidden="true" ></span>
-                                Ya tengo cuenta
                             </button>
                         </form>
                     </div>
-
+                    <div class="end">
+                        <div class="form-group">
+                            Otros inicios de sesión
+                        </div>
+                        <ul>
+                            <li><a (click)="iniciarConGoogle()" target="_blank"><i class='bx bxl-google'></i>Google</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
