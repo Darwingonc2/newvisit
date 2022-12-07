@@ -9,14 +9,20 @@ import {Router} from '@angular/router';
 })
 export class PerfilComponent implements OnInit {
 
+    public nombre: any;
+    public correo: any;
+
   constructor(private usuarioService: UsuarioService,
               private router: Router) { }
 
   ngOnInit(): void {
+      this.nombre = localStorage.getItem('nombre');
+      this.correo = localStorage.getItem('correo');
   }
 
   logout(){
       this.usuarioService.logout().then((user) => {
+          localStorage.clear();
           console.log(user);
           this.router.navigate(['/iniciar-sesion']);
       }).catch((error) => {
