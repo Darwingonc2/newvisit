@@ -10,6 +10,9 @@ import {Router} from '@angular/router';
 })
 export class IniciarComponent implements OnInit {
 
+    public nombre: any;
+    public correo: any;
+
     iniciarSesion = new FormGroup({
         password: new FormControl('', Validators.required),
         email: new FormControl('', [
@@ -25,7 +28,8 @@ export class IniciarComponent implements OnInit {
 
     iniciar(){
         this.usuarioService.iniciar(this.iniciarSesion.value).then((user) => {
-            console.log(user);
+            this.correo = user.user.email;
+            localStorage.setItem('correo', this.correo);
             this.router.navigate(['/perfil']);
         }).catch((error) => {
             console.log(error);
@@ -59,7 +63,10 @@ export class IniciarComponent implements OnInit {
 
     iniciarConGoogle(){
         this.usuarioService.iniciarGoogle().then((user) => {
-            console.log(user);
+            this.nombre = user.user.displayName;
+            this.correo = user.user.email;
+            localStorage.setItem('nombre', this.nombre);
+            localStorage.setItem('correo', this.correo);
             this.router.navigate(['/perfil']);
         }).catch((error) => {
             console.log(error);
