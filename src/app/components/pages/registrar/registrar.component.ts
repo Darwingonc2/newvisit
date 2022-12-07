@@ -11,6 +11,9 @@ import {Router} from '@angular/router';
 })
 export class RegistrarComponent implements OnInit {
 
+    public nombre: any;
+    public correo: any;
+
   constructor(
       private afAuth: AngularFireAuth,
       private usuarioService: UsuarioService,
@@ -29,8 +32,9 @@ export class RegistrarComponent implements OnInit {
 
   registrar(){
     this.usuarioService.registar(this.registrarUsuario.value).then((user) => {
-        console.log(user);
-        this.router.navigate(['/iniciar-sesion']);
+        this.correo = user.user.email;
+        localStorage.setItem('correo', this.correo);
+        this.router.navigate(['/perfil']);
     }).catch((error) => {
         console.log(error);
         alert(this.firebaseError(error.code));
@@ -52,7 +56,20 @@ export class RegistrarComponent implements OnInit {
   }
 
   tengoCuenta(){
-      this.router.navigate([ 'iniciar-sesion'])
+      this.router.navigate([ 'iniciar-sesion']);
   }
+
+    iniciarConGoogle(){
+        this.usuarioService.iniciarGoogle().then((user) => {
+            this.nombre = user.user.displayName;
+            this.correo = user.user.email;
+            localStorage.setItem('nombre', this.nombre);
+            localStorage.setItem('correo', this.correo);
+            this.router.navigate(['/perfil']);
+        }).catch((error) => {
+            console.log(error);
+            alert(this.firebaseError(error.code));
+        });
+    }
 
 }
